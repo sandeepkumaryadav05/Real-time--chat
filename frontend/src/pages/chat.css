@@ -1,0 +1,407 @@
+/* MAIN CONTAINER */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  font-family: "Inter", sans-serif;
+  color: #e5e7eb;
+  animation: fadeIn 0.6s ease;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 28%;
+  background: #020617;
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+/* HEADER */
+.sidebar-header {
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* USERS */
+.user-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.user {
+  padding: 14px 18px;
+  margin: 6px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.user span {
+  font-weight: 500;
+}
+
+.user:hover {
+  background: #1e293b;
+  transform: translateX(6px);
+  box-shadow: 0 0 10px #2563eb55;
+}
+
+.user.active {
+  background: #2563eb33;
+}
+
+/* AVATAR */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2563eb;
+  flex-shrink: 0;
+}
+
+.avatar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.06);
+}
+
+/* ONLINE DOT */
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  transition: 0.3s;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.status-dot.online {
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+/* CHAT AREA */
+.chatbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #020617;
+}
+
+/* HEADER */
+.chat-header {
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #1e293b;
+  animation: slideDown 0.4s ease;
+}
+
+/* MESSAGE AREA */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 30px;
+}
+
+/* MESSAGE */
+.msg {
+  max-width: 65%;
+  margin-bottom: 14px;
+  animation: popUp 0.3s ease;
+}
+
+.msg.me {
+  margin-left: auto;
+}
+
+.msg.other {
+  margin-right: auto;
+}
+
+/* BUBBLE */
+.bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+/* MESSAGE IMAGE */
+.msg-image {
+  max-width: 240px;
+  max-height: 240px;
+  border-radius: 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  object-fit: cover;
+  display: block;
+}
+
+/* MY MESSAGE */
+.msg.me .bubble {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 5px 20px #2563eb55;
+}
+
+/* OTHER MESSAGE */
+.msg.other .bubble {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-bottom-left-radius: 5px;
+}
+
+/* FOOTER */
+.msg-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #f87171;
+  transition: 0.2s;
+}
+
+.delete-btn {
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.delete-btn:hover {
+  border: 1.5px solid #f00808;
+  border-radius: 50%;
+}
+
+.delete-modal {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+}
+
+.delete-option {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-option:hover {
+  background: #dc2626;
+}
+
+.cancel-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #374151;
+  color: white;
+}
+
+
+
+.file-btn {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #3b82f6;
+}
+
+.file-btn:hover {
+  transform: scale(1.2);
+}
+
+/* INPUT */
+
+.input-box {
+  display: flex;
+  padding: 14px;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #1e293b;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 25px;
+  border: 1px solid #1e293b;
+  outline: none;
+  background: #0f172a;
+  color: white;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px #3b82f655;
+}
+
+.input-box button {
+  margin-left: 12px;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-box button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+/* GROUP BUTTON */
+.group-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.group-btn:hover {
+  box-shadow: 0 0 12px #3b82f6;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-modal {
+  background: #020617;
+  padding: 28px;
+  border-radius: 16px;
+  width: 360px;
+  border: 1px solid #1e293b;
+  animation: popUp 0.4s ease;
+}
+
+/* INPUT */
+.modal-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #0f172a;
+  color: white;
+}
+
+.divider {
+  height: 1px;
+  background: #1e293b;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid #2563eb;
+  background: #0f172a;
+}
+
+/* Align avatar + name */
+.user {
+  display: flex;
+  gap: 12px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

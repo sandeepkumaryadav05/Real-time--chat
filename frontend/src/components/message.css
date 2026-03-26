@@ -1,0 +1,69 @@
+.message-row {
+  display: flex;
+  margin: 8px 0;
+}
+
+.message-row.me {
+  justify-content: flex-end;
+}
+
+.message-row.other {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  background: #1e293b;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* TEXT */
+.msg-text {
+  word-wrap: break-word;
+}
+
+/* IMAGE */
+.msg-image {
+  max-width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.msg-image:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+.msg-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #f87171;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  color: #ef4444;
+}
+
+/* DELETED MESSAGE */
+.deleted-msg {
+  font-style: italic;
+  color: #9ca3af;
+}

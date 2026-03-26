@@ -1,0 +1,85 @@
+/* ===== Overlay (background blur) ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ===== Modal Box ===== */
+.delete-modal {
+  background: #17202f; /* dark blue */
+  color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: popup 0.3s ease;
+}
+
+/* ===== Title ===== */
+.delete-modal h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===== Buttons ===== */
+.delete-modal button {
+  margin: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Delete for Everyone */
+.delete-modal button:first-of-type {
+  background: #ef4444; /* red */
+  color: white;
+}
+
+.delete-modal button:first-of-type:hover {
+  background: #dc2626;
+}
+
+/* Delete for Me */
+.delete-modal button:nth-of-type(2) {
+  background: #3b82f6; /* blue */
+  color: white;
+}
+
+.delete-modal button:nth-of-type(2):hover {
+  background: #2563eb;
+}
+
+/* Cancel Button */
+.delete-modal button:last-of-type {
+  background: #64748b;
+  color: white;
+}
+
+.delete-modal button:last-of-type:hover {
+  background: #475569;
+}
+
+/* ===== Animation ===== */
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
