@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Status-Live%20Demo%20Available-success?style=for-the-badge&logoColor=white" alt="Live Demo Status" />
+  <a href="https://real-time-chat-henna-iota.vercel.app/">
+    <img src="https://img.shields.io/badge/Status-Live%20Demo%20Available-success?style=for-the-badge&logoColor=white" alt="Live Demo Status" />
+  </a>
 
   <h1>💬 Real-Time Chat Engine</h1>
   <p><i>A Next-Generation Real-Time Messaging Architecture</i></p>
