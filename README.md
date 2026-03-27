@@ -102,6 +102,37 @@ npm run dev
 ```
 
 ---
+
+## 📂 Repository Architecture
+
+For developers exploring the codebase or preparing for system design walkthroughs, here is the complete separation of concerns:
+
+```text
+📦 Real-time Chat
+ ┣ 📂 backend/               # ⚙️ Node/Express API Server
+ ┃ ┣ 📂 src/
+ ┃ ┃ ┣ 📂 controllers/       # Business logic (Message creation, Authentication, File handling)
+ ┃ ┃ ┣ 📂 middleware/        # Security (JWT Guards) & Parsing (Multer for uploads)
+ ┃ ┃ ┣ 📂 models/            # Database structure (Mongoose schemas for Users, Chats, Messages)
+ ┃ ┃ ┣ 📂 routes/            # REST endpoint definitions (/api/chat, /api/auth)
+ ┃ ┃ ┣ 📜 app.js             # Express application instantiation
+ ┃ ┃ ┗ 📜 socket.js          # Raw Socket.IO real-time event listeners
+ ┃ ┗ 📜 package.json         # Backend dependencies
+ ┃
+ ┣ 📂 frontend/              # 🎨 React/Vite Client Application
+ ┃ ┣ 📂 public/              # Static frontend assets
+ ┃ ┣ 📂 src/
+ ┃ ┃ ┣ 📂 components/        # Isolated UI pieces (Sidebar, ChatBox message renderer)
+ ┃ ┃ ┣ 📂 services/          # RESTful outbound logic (Axios singleton with Auth injectors)
+ ┃ ┃ ┣ 📜 socket.js          # Outbound Socket.io singleton connection
+ ┃ ┃ ┣ 📜 main.jsx           # React DOM bootstrapping
+ ┃ ┃ ┗ 📜 App.jsx            # Core routing and state initialization
+ ┃ ┗ 📜 package.json         # Frontend UI dependencies (Vite, React, Socket-Client)
+ ┃
+ ┗ 📜 README.md              # 📖 You are here
+```
+
+---
 <div align="center">
   <i>Architected with passion & precision.</i>
 </div>
